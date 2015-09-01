@@ -5,11 +5,7 @@ before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - "[ \"$BUILD_PR_BRANCH\" = \"true\" ] && git checkout $TRAVIS_BRANCH && echo \"OCTOPULL_SHA=$(git rev-parse HEAD)\"; true"
-  - cd contextproject-ms3
-  - wget http://0110.be/releases/TarsosDSP/TarsosDSP-2.2/TarsosDSP-2.2.jar
-  - mvn install:install-file -DgroupId=be.tarsos.dsp -DartifactId=TarsosDSP -Dpackaging=jar -Dversion=2.2 -Dfile=TarsosDSP-2.2.jar -DgeneratePom=true
-  - wget http://0110.be/releases/TarsosTranscoder/TarsosTranscoder-1.2.jar
-  - mvn install:install-file -DgroupId=be.tarsos.transcoder -DartifactId=TarsosTranscoder -Dpackaging=jar -Dversion=1.2 -Dfile=TarsosTranscoder-1.2.jar -DgeneratePom=true
+  - cd SEMthing-fishy
 notifications:
   webhooks:
     - http://octopull.rmhartog.me/api/travis/webhook
